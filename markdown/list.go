@@ -40,6 +40,10 @@ func list(prefix string, items ...listItem) listItems {
 			for _, v := range item {
 				list = append(list, "     "+v)
 			}
+		case []string:
+			for _, v := range item {
+				list = append(list, prefix+v)
+			}
 		case string:
 			list = append(list, prefix+item)
 		default:
@@ -84,6 +88,10 @@ func TaskList(tasks ...taskItem) taskItem {
 		case listItems:
 			for _, v := range item {
 				list = append(list, "     "+v)
+			}
+		case []string:
+			for _, v := range item {
+				list = append(list, prefix+v)
 			}
 		case string:
 			list = append(list, prefix+item)

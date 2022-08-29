@@ -60,6 +60,15 @@ func main() {
 
 	m.Write(md.Br())
 
+	m.Write(md.RootList(
+		[]string{
+			"Item1",
+			"Item2",
+		},
+	))
+
+	m.Write(md.Br())
+
 	m.Write(md.RootTaskList(
 		md.Task(true, "Task1"),
 		md.Task(false, "Task2"),
